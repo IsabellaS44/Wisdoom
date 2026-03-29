@@ -1,12 +1,14 @@
 <?php
 require_once 'assets/bootstrap.php';
-require_once 'assets/includes/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="sv">
+<?php
+require_once 'assets/includes/header.php';
+?>
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wisdoom</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,39 +28,39 @@ require_once 'assets/includes/header.php';
 </head>
 
 <body class="index-page">
- <main>
-<?php if (isset($_GET['action'])): ?>
-<section class="pt-5">
-    <div class="container text-center">
-      <?php
-      // Checks what action is set to
-      switch ($_GET['action']) {
-        case 'empty':
-          echo '
+  <main>
+    <?php if (isset($_GET['action'])): ?>
+      <section class="pt-5">
+        <div class="container text-center">
+          <?php
+          // Checks what action is set to
+          switch ($_GET['action']) {
+            case 'empty':
+              echo '
             <div class="alert alert-warning">
                 Du har inte angett en e-postadress eller lösenord.
             </div>
             ';
-          break;
-        case 'error':
-          echo '
+              break;
+            case 'error':
+              echo '
             <div class="alert alert-danger">
                 Du har angett fel e-postadress eller lösenord.
             </div>
             ';
-          break;
-        case 'logout':
-          echo '
+              break;
+            case 'logout':
+              echo '
             <div class="alert alert-danger">
                 Du har loggats ut.
             </div>
             ';
-          break;
-      }
-      ?>
-    </div>
-  </section>
-<?php endif; ?>
+              break;
+          }
+          ?>
+        </div>
+      </section>
+    <?php endif; ?>
     <!-- Toppkarusell -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -198,44 +200,44 @@ require_once 'assets/includes/header.php';
               <h5 class="card-title">Molecular Biology</h5>
               <p class="card-text">En genomgång av nya upptäckter inom molekylärbiologi och hur genetiska strukturer påverkar cellers funktion och utveckling.</p>
             </div>
-             </div>
-            </a>
           </div>
-          <div class="col">
-            <a href="bookid.php?id=10" class="text-decoration-none text-reset d-block h-100">
-              <div class="card h-100">
-                <img src="assets/images/articles/art2.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Microbiological Research</h5>
-                  <p class="card-text">Artikeln undersöker mikroorganismer och deras betydelse för sjukdomar, ekosystem och medicinsk forskning.</p>
-                </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="bookid.php?id=10" class="text-decoration-none text-reset d-block h-100">
+            <div class="card h-100">
+              <img src="assets/images/articles/art2.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Microbiological Research</h5>
+                <p class="card-text">Artikeln undersöker mikroorganismer och deras betydelse för sjukdomar, ekosystem och medicinsk forskning.</p>
               </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="bookid.php?id=11" class="text-decoration-none text-reset d-block h-100">
-              <div class="card h-100">
-                <img src="assets/images/articles/art3.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Data Science & AI</h5>
-                  <p class="card-text">En analys av hur artificiell intelligens och dataanalys används inom forskning och teknisk utveckling.</p>
-                </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="bookid.php?id=11" class="text-decoration-none text-reset d-block h-100">
+            <div class="card h-100">
+              <img src="assets/images/articles/art3.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Data Science & AI</h5>
+                <p class="card-text">En analys av hur artificiell intelligens och dataanalys används inom forskning och teknisk utveckling.</p>
               </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="bookid.php?id=12" class="text-decoration-none text-reset d-block h-100">
-              <div class="card h-100">
-                <img src="assets/images/articles/art4.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Climate & Environmental Science</h5>
-                  <p class="card-text">En studie av globala klimatförändringar och de vetenskapliga insatser som görs för en mer hållbar framtid.</p>
-                </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="bookid.php?id=12" class="text-decoration-none text-reset d-block h-100">
+            <div class="card h-100">
+              <img src="assets/images/articles/art4.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Climate & Environmental Science</h5>
+                <p class="card-text">En studie av globala klimatförändringar och de vetenskapliga insatser som görs för en mer hållbar framtid.</p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
+    </div>
   </section>
   <?php include 'assets/includes/footer.php'; ?>
 </body>
