@@ -20,9 +20,10 @@ require_once 'assets/functions/select.id.php';
        <link rel="manifest" href="assets/images/branding/site.webmanifest">
       </head>
       <body class="header-page edit-page page-shell">
-        // Include header
+        <!-- Include header -->
         <?php include 'assets/includes/header.php'; ?>
         <main>
+          <!-- Confirmation form for deleting a review -->
            <div class ="container py-5 mb-5">
             <h1 class="mb-4">Radera recension</h1>  
             <form action="remove.php" method="post">

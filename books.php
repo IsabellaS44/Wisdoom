@@ -23,6 +23,7 @@ require_once 'assets/functions/select.php';
 </head>
 
 <body class="books-page header-page">
+    <!-- Include header -->
     <?php include 'assets/includes/header.php'; ?>
     <main>
         <?php
@@ -238,7 +239,7 @@ require_once 'assets/functions/select.php';
                     echo "<p>" . $row['review_content'] . "</p>";
                     echo "<p class='text-muted mb-1'>" . $row['created_at'] . "</p>";
 
-                    // Edit & Delete
+                    // Delete and Edit 
                     echo "<p class='text-danger-emphasis mb-1'>";
                     echo "<a href='edit.php?id=" . $row['review_id'] . "'>";
                     echo "<u>Redigera</u><i class='fa-regular fa-pen-to-square'></i>";

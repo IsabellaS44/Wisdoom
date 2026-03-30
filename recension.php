@@ -31,6 +31,7 @@ require_once 'assets/functions/insert.php';
   <?php include 'assets/includes/header.php'; ?>
   <main>
     <?php
+    // selects the source from the dropdown and checks if it's valid, if not defaults to books
     $allowedSources = ['books', 'articles', 'docs'];
     $selectedSource = $_GET['source'] ?? 'books';
     if (!in_array($selectedSource, $allowedSources, true)) {

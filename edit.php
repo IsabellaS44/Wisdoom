@@ -39,7 +39,7 @@ require_once 'assets/functions/update.php';
                     <label for="content" class="col-1 col-form-label">Recension</label>
                     <div class="col-4">
                         <input type="text" class="form-control" id="content" name="review_content" value="<?php
-                                                                                                            echo $row['review_content']; ?>">
+                        echo $row['review_content']; ?>">
                     </div>
                 </div>
                 <input type="hidden" name="review_id" value="<?php echo $row['review_id']; ?>">

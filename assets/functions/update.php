@@ -1,7 +1,7 @@
 <?php
 // connect to database
 require_once 'assets/config/db.php';
-
+// category validation and update process
 if (isset($_POST['modify'])) {
     $allowedCategories = ['books', 'articles', 'docs'];
     $category = $_POST['category'] ?? '';

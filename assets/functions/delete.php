@@ -1,5 +1,5 @@
 <?php
-// Checks whether delete button is pressed
+// Checks wheter the delete button has been pressed
 if (isset($_POST['delete'])) {
     $allowedCategories = ['books', 'articles', 'docs'];
     $category = $_POST['category'] ?? '';
