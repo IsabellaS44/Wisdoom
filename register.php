@@ -65,7 +65,7 @@ require_once 'assets/functions/insert.php';
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="index.php" class="btn btn-danger">Tillbaka</a>
-                                <button type="submit" name="register" class="btn btn-success" name="register">Skapa konto</button>
+                                <button type="submit" class="btn btn-success" name="register">Skapa konto</button>
                             </div>
                         </div>
                     </div>
@@ -78,5 +78,4 @@ require_once 'assets/functions/insert.php';
     include 'assets/includes/footer.php';
     ?>
 </body>
-
 </html>

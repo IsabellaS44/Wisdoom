@@ -1,30 +1,12 @@
 <?php
+$bodyClass = 'books-page';
 require_once 'assets/bootstrap.php';
 // Register information to database
 require_once 'assets/functions/insert.php';
 // Get reviews from database
 require_once 'assets/functions/select.php';
+include 'assets/includes/header.php'; 
 ?>
-
-<!DOCTYPE html>
-<html lang="sv">
-
-<head>
-    <meta charset="utf-8">
-    <title>Wisdoom</title>
-    <!-- Unified CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-      <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/branding/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/branding/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/branding/favicon-16x16.png">
-  <link rel="icon" href="assets/images/branding/favicon.ico">
-  <link rel="manifest" href="assets/images/branding/site.webmanifest">
-</head>
-
-<body class="books-page header-page">
-    <!-- Include header -->
-    <?php include 'assets/includes/header.php'; ?>
     <main>
         <?php
         // Checks if an action is set

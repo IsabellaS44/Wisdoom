@@ -8,6 +8,7 @@ require_once 'assets/functions/session.login.php';
 <head>
     <meta charset="utf-8">
     <title>Wisdoom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="assets/images/branding/favicon.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -15,9 +16,15 @@ require_once 'assets/functions/session.login.php';
     <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/branding/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/branding/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/branding/favicon-16x16.png">
+    <link rel="icon" href="assets/images/branding/favicon.ico">
+    <link rel="manifest" href="assets/images/branding/site.webmanifest">
 </head>
 
-<body>
+<body class="<?php echo isset($bodyClass) ? $bodyClass : 'index-page'; ?> header-page">
     <!-- Navmenu -->
     <header>
         <nav class="navbar navbar-expand-md p-3 px-5">
@@ -86,6 +93,3 @@ require_once 'assets/functions/session.login.php';
             </div>
         </nav>
     </header>
-</body>
-
-</html>

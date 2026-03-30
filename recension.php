@@ -8,27 +8,8 @@ require_once 'assets/config/db.php';
 //Register information to database
 require_once 'assets/functions/insert.php';
 //Include header
-
+require_once 'assets/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="sv">
-
-<head>
-  <meta charset="utf-8">
-  <title>Wisdoom</title>
-  <!-- Unified CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-      <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/branding/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/branding/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/branding/favicon-16x16.png">
-  <link rel="icon" href="assets/images/branding/favicon.ico">
-  <link rel="manifest" href="assets/images/branding/site.webmanifest">
-</head>
-
-<body class="header-page page-shell">
-  <!-- Include header -->
-  <?php include 'assets/includes/header.php'; ?>
   <main>
     <?php
     // selects the source from the dropdown and checks if it's valid, if not defaults to books
@@ -69,17 +50,17 @@ require_once 'assets/functions/insert.php';
         </div>
       <?php else: ?>
       <form action="recension.php" method="post">
-        <!-- Choose category -->
+      <!-- Choose category -->
         <div class="mb-4">
-          <label for="category" class="form-label mb-1 fw-bold">Välj kategori</label>
           <select class="form-select" id="category" name="source" required>
-            <option value="books" <?php echo $selectedSource === 'books' ? 'selected' : ''; ?>>Böcker</option>
-            <option value="articles" <?php echo $selectedSource === 'articles' ? 'selected' : ''; ?>>Artiklar</option>
-            <option value="docs" <?php echo $selectedSource === 'docs' ? 'selected' : ''; ?>>Dokumentärer</option>
+            <option value="" disabled selected>Välj kategori</option>
+            <option value="books">Böcker</option>
+            <option value="articles">Artiklar</option>
+            <option value="docs">Dokumentärer</option>
           </select>
         </div>
         <div class="review-card p-4">
-          <h2 class="mb-4">Recension</h2>
+          <h1 class="mb-4">Recension</h1>
           <div class="d-flex align-items-center gap-3 mb-4">
             <!-- Stars for rating(non functional) -->
             <div class="text-warning fs-2">
@@ -110,6 +91,4 @@ require_once 'assets/functions/insert.php';
   </main>
   <!-- Include footer -->
   <?php include 'assets/includes/footer.php'; ?>
-</body>
-
-</html>
+  
