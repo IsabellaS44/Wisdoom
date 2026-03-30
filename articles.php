@@ -108,145 +108,147 @@ include 'assets/includes/header.php'; ?>
                         <div class="hide articles-hide-text">En genomgång av avancerade material och deras roll inom nanoteknik och framtidens teknologi.</div>
                     </div>
                 </div>
-
-                <div class="section-divider" aria-hidden="true"></div>
-
-                <!--Valda artikeln-->
-                <section class="articles-featured-section">
-                    <div class="container-lg">
-                        <h2 class="visually-hidden">Utvald artikel</h2>
-                        <div class="articles-featured-card">
-                            <img src="assets/images/articles/art1.png" alt="bild på dok n.2" class="articles-featured-img">
-                            <div class="articles-featured-content">
-                                <div class="text-warning articles-featured-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <h2 class="articles-featured-title">Molecular Biology</h2>
-                                <p class="articles-featured-author">by; Jacob Lawrence</p>
-
-                                <div class="articles-featured-buttons">
-                                    <button type="button" class="btn btn-outline-secondary">
-                                        <span class="text-danger-emphasis"><u>Läs artikel</u><i class="fa-brands fa-leanpub fa-xl ms-2"></i></span>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-secondary">
-                                        <span class="text-danger-emphasis"><u>Lyssna på artikel</u><i class="fa-solid fa-volume-high fa-xl ms-2"></i></span>
-                                    </button>
-                                </div>
-
-                                <p class="articles-featured-description">En genomgång av nya upptäckter inom molekylärbiologi och hur genetiska strukturer påverkar cellers funktion och utveckling.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="section-divider" aria-hidden="true"></div>
-
-                <!-- Testimonial section-->
-                <div class="container mt-4">
-                    <div class="d-flex justify-content-between align-items-center mt-5">
-                        <h2>
-                            <p class="text-white text-left text-sucess">Recensioner</p>
-                        </h2>
-
-                        <a href="recension.php?source=docs" class="btn btn-sucess">
-                            <p class="shadow text-white text-left text-sucess"><i class="fa-solid fa-plus"></i>Skapa recension</p>
-                        </a>
-                    </div>
-
-                    <!--Show reviews from database-->
-                    <div class="row g-4">
-                        <?php
-                        $reviews = show_reviews($dbh, 'docs');
-                        foreach ($reviews as $row) {
-                            $fullName = trim(($row['firstname'] ?? '') . ' ' . ($row['lastname'] ?? ''));
-                            if ($fullName === '') {
-                                $fullName = 'Anvandare ' . (string) $row['user_id'];
-                            }
-                            echo "<div class='card-b mb-3'>";
-                            echo "<i class='fa-solid fa-circle-user fa-xl'></i>";
-                            echo "<p class='fw-bold mb-0'>" . $fullName . "</p>";
-                            echo "<div class='text-warning mb-2'>";
-                            echo "<i class='fa-regular fa-star'></i>";
-                            echo "<i class='fa-regular fa-star'></i>";
-                            echo "<i class='fa-regular fa-star'></i>";
-                            echo "<i class='fa-regular fa-star'></i>";
-                            echo "<i class='fa-regular fa-star'></i>";
-                            echo "</div>";
-                            echo "<h3>" . $row['review_title'] . "</h3>";
-                            echo "<p>" . $row['review_content'] . "</p>";
-                            echo "<p class='text-muted mb-1'>" . $row['created_at'] . "</p>";
-
-                            // Edit & Delete
-                            echo "<p class='text-danger-emphasis mb-1'>";
-                            echo "<a href='edit.php?id=" . $row['review_id'] . "'>";
-                            echo "<u>Redigera</u><i class='fa-regular fa-pen-to-square'></i>";
-                            echo "</a>";
-                            echo "<a href='remove.php?id=" . $row['review_id'] . "'>";
-                            echo "<u>Radera</u><i class='fa-regular fa-trash-can'></i>";
-                            echo "</a>";
-                            echo "</p>";
-                            echo "</div>";
-
-                            // Like and Comment
-                            echo "<div class='d-flex flex-row-reverse'>";
-                            echo "<div class='p-2'>";
-                            echo "<p class='shadow text-white'>Kommentera <i class='fa-solid fa-comments'></i></p>";
-                            echo "</div>";
-                            echo "<div class='p-2'>";
-                            echo "<p class='shadow text-white'>Likea<i class='fa-solid fa-thumbs-up'></i></p>";
-                            echo "</div>";
-                            echo "</div>";
-                        }
-                        ?>
-                    </div>
-
-
-                    <!-- Recension -->
-                    <div class="row g-4">
-                        <div class="card-b mb-3">
-                            <i class="fa-solid fa-circle-user fa-xl"></i>
-                            <p class="fw-bold mb-0">Emma Lundqvist</p>
-                            <div class="text-warning">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>Superintressant! Gillade verkligen hur allt förklarades på ett tydligt sätt utan att bli för simpelt.</p>
-
-                            <p class="text-muted mb-1">12 mars 2026</p>
-                            <p class="text-danger-emphasis mb-1"><u>Redigera</u><i class="fa-regular fa-pen-to-square"></i>
-                                <u>Radera</u><i class="fa-regular fa-trash-can"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
     </section>
 
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!--Valda artikeln-->
+    <section class="articles-featured-section">
+        <div class="container-lg">
+            <h2 class="visually-hidden">Utvald artikel</h2>
+            <div class="articles-featured-card">
+                <img src="assets/images/articles/art1.png" alt="bild på dok n.2" class="articles-featured-img">
+                <div class="articles-featured-content">
+                    <div class="text-warning articles-featured-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h2 class="articles-featured-title">Molecular Biology</h2>
+                    <p class="articles-featured-author">by; Jacob Lawrence</p>
+
+                    <div class="articles-featured-buttons">
+                        <button type="button" class="btn btn-outline-secondary">
+                            <span class="text-danger-emphasis"><u>Läs artikel</u><i class="fa-brands fa-leanpub fa-xl ms-2"></i></span>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <span class="text-danger-emphasis"><u>Lyssna på artikel</u><i class="fa-solid fa-volume-high fa-xl ms-2"></i></span>
+                        </button>
+                    </div>
+
+                    <p class="articles-featured-description">En genomgång av nya upptäckter inom molekylärbiologi och hur genetiska strukturer påverkar cellers funktion och utveckling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- Testimonial section-->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="text-white text-left text-success">Recensioner</h2>
+
+            <a href="recension.php?source=docs" class="btn btn-success">
+                <span class="shadow text-white text-left text-success"><i class="fa-solid fa-plus"></i>Skapa recension</span>
+            </a>
+        </div>
+
+        <!--Show reviews from database-->
+        <div class="row g-4">
+            <?php
+            $reviews = show_reviews($dbh, 'articles');
+            foreach ($reviews as $row) {
+                $fullName = trim(($row['firstname'] ?? '') . ' ' . ($row['lastname'] ?? ''));
+                if ($fullName === '') {
+                    $fullName = 'Anvandare ' . (string) $row['user_id'];
+                }
+                echo "<div class='card-b mb-3'>";
+                echo "<i class='fa-solid fa-circle-user fa-xl'></i>";
+                echo "<p class='fw-bold mb-0'>" . $fullName . "</p>";
+                echo "<div class='text-warning mb-2'>";
+                echo "<i class='fa-regular fa-star'></i>";
+                echo "<i class='fa-regular fa-star'></i>";
+                echo "<i class='fa-regular fa-star'></i>";
+                echo "<i class='fa-regular fa-star'></i>";
+                echo "<i class='fa-regular fa-star'></i>";
+                echo "</div>";
+                echo "<h3>" . $row['review_title'] . "</h3>";
+                echo "<p>" . $row['review_content'] . "</p>";
+                echo "<p class='text-muted mb-1'>" . $row['created_at'] . "</p>";
+
+                // Edit & Delete
+                echo "<p class='text-danger-emphasis mb-1'>";
+                echo "<a href='edit.php?id=" . $row['review_id'] . "'>";
+                echo "<u>Redigera</u><i class='fa-regular fa-pen-to-square'></i>";
+                echo "</a>";
+                echo "<a href='remove.php?id=" . $row['review_id'] . "'>";
+                echo "<u>Radera</u><i class='fa-regular fa-trash-can'></i>";
+                echo "</a>";
+                echo "</p>";
+                echo "</div>";
+
+                // Like and Comment
+                echo "<div class='d-flex flex-row-reverse'>";
+                echo "<div class='p-2'>";
+                echo "<p class='shadow text-white'>Kommentera <i class='fa-solid fa-comments'></i></p>";
+                echo "</div>";
+                echo "<div class='p-2'>";
+                echo "<p class='shadow text-white'>Likea<i class='fa-solid fa-thumbs-up'></i></p>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+        </div>
+    </div>
+
+    <!-- Recension -->
+    <div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="card-b mb-3">
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
+                    <p class="fw-bold mb-0">Emma Lundqvist</p>
+                    <div class="text-warning">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>Superintressant! Gillade verkligen hur allt förklarades på ett tydligt sätt utan att bli för simpelt.</p>
+
+                    <p class="text-muted mb-1">12 mars 2026</p>
+                    <p class="text-danger-emphasis mb-1"><u>Redigera</u><i class="fa-regular fa-pen-to-square"></i>
+                        <u>Radera</u><i class="fa-regular fa-trash-can"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Likea & Kommentera -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4 mb-3">
                 <div class="d-flex flex-row-reverse">
                     <div class="p-2">
-                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i>
+                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
-                    </p>
                     <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                     </div>
-                    </p>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 
     <!-- Recension -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4">
                 <div class="card-b mb-3">
@@ -272,28 +274,24 @@ include 'assets/includes/header.php'; ?>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Likea & Kommentera -->
-        <section>
-            <div class="container">
-                <div class="d-flex flex-row-reverse">
-                    <div class="p-2">
-                        <p class="shadow text-white">Kommentera<i class="fa-solid fa-comments"></i>
-                    </div>
-                    </p>
-                    <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
-                    </div>
-                    </p>
+    <!-- Likea & Kommentera -->
+    <div>
+        <div class="container">
+            <div class="d-flex flex-row-reverse">
+                <div class="p-2">
+                    <p class="shadow text-white">Kommentera<i class="fa-solid fa-comments"></i></p>
+                </div>
+                <div class="p-2">
+                    <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                 </div>
             </div>
-            </div>
-            </div>
-            </div>
-        </section>
+        </div>
+    </div>
 
-    </section>
-    <section>
+    <!-- Recension -->
+    <div>
         <div class="container">
             <div class="row g-4">
                 <div class="card-b mb-3">
@@ -315,25 +313,23 @@ include 'assets/includes/header.php'; ?>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Likea & Kommentera -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4 mb-3">
                 <div class="d-flex flex-row-reverse">
                     <div class="p-2">
-                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i>
+                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
-                    </p>
                     <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                     </div>
-                    </p>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 
 </main>
 

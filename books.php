@@ -25,8 +25,9 @@ include 'assets/includes/header.php';
 
     <!-- Hero section -->
     <section class="hero text-center articles-hero">
+        <h2 class="visually-hidden">Introduktion</h2>
         <h1 class="articles-hero-title text-white">Populära böcker</h1>
-        <h3 class="articles-hero-subtitle text-white">Topplistan just nu!</h3>
+        <h2 class="articles-hero-subtitle text-white">Topplistan just nu!</h2>
     </section>
 
     <div class="section-divider" aria-hidden="true"></div>
@@ -146,6 +147,8 @@ include 'assets/includes/header.php';
                         <div class="hide articles-hide-text">En historisk genomgång av idéer och upptäckter som förändrat vår förståelse av världen.</div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
     <div class="section-divider" aria-hidden="true"></div>
@@ -164,10 +167,10 @@ include 'assets/includes/header.php';
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-            <h2 class="articles-featured-title">Vetenskapens utveckling</h2>
-            <p class="articles-featured-author">by; Brian Nelson</p>
+                    <h2 class="articles-featured-title">Vetenskapens utveckling</h2>
+                    <p class="articles-featured-author">by; Brian Nelson</p>
 
-            <div class="articles-featured-buttons">
+                    <div class="articles-featured-buttons">
                         <button type="button" class="btn btn-outline-secondary">
                             <span class="text-danger-emphasis"><u>Läs dokumentär</u><i class="fa-brands fa-leanpub fa-xl ms-2"></i></span>
                         </button>
@@ -184,34 +187,13 @@ include 'assets/includes/header.php';
 
     <div class="section-divider" aria-hidden="true"></div>
 
-
-
-                    <div class="articles-featured-buttons">
-                        <button type="button" class="btn btn-outline-secondary">
-                            <p class="text-danger-emphasis mb-0"><u>Läs bok</u><i class="fa-brands fa-leanpub fa-xl ms-2"></i></p>
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary">
-                            <p class="text-danger-emphasis mb-0"><u>Lyssna på bok</u><i class="fa-solid fa-volume-high fa-xl ms-2"></i></p>
-                        </button>
-                    </div>
-
-                    <p class="articles-featured-description">En resa genom vetenskapens historia, från tidiga upptäckter till dagens avancerade forskning. Boken visar hur idéer, experiment och teknologiska framsteg har förändrat vår förståelse av universum.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider" aria-hidden="true"></div>
-
     <!-- Testimonial section-->
-    <section class="container mt-4">
+    <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>
-                <p class="text-white text-left text-sucess">Recensioner</p>
-            </h2>
+            <h2 class="text-white text-left text-success">Recensioner</h2>
 
-            <a href="recension.php?source=docs" class="btn btn-sucess">
-                <p class="shadow text-white text-left text-sucess"><i class="fa-solid fa-plus"></i>Skapa recension</p>
+            <a href="recension.php?source=docs" class="btn btn-success">
+                <span class="shadow text-white text-left text-success"><i class="fa-solid fa-plus"></i>Skapa recension</span>
             </a>
         </div>
 
@@ -238,7 +220,7 @@ include 'assets/includes/header.php';
                 echo "<p>" . $row['review_content'] . "</p>";
                 echo "<p class='text-muted mb-1'>" . $row['created_at'] . "</p>";
 
-                // Delete and Edit 
+                // Edit & Delete
                 echo "<p class='text-danger-emphasis mb-1'>";
                 echo "<a href='edit.php?id=" . $row['review_id'] . "'>";
                 echo "<u>Redigera</u><i class='fa-regular fa-pen-to-square'></i>";
@@ -262,54 +244,54 @@ include 'assets/includes/header.php';
             ?>
         </div>
 
-        <!-- Recension -->
-        <div class="row g-4">
-            <div class="card-b mb-3">
-                <i class="fa-solid fa-circle-user fa-xl"></i>
-                <p class="fw-bold mb-0">Hanna Sjöberg</p>
-                <div class="text-warning">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <p>Fastnade direkt! Väldigt snyggt berättad och inspirerande hela vägen.</p>
+    <!-- Recension -->
+    <div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="card-b mb-3">
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
+                    <p class="fw-bold mb-0">Hanna Sjöberg</p>
+                    <div class="text-warning">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>Fastnade direkt! Väldigt snyggt berättad och inspirerande hela vägen.</p>
 
-                <p class="text-muted mb-1">14 mars 2026</p>
-                <p class="text-danger-emphasis mb-1"><u>Redigera</u><i class="fa-regular fa-pen-to-square"></i>
-                    <u>Radera</u><i class="fa-regular fa-trash-can"></i>
-                </p>
+                    <p class="text-muted mb-1">14 mars 2026</p>
+                    <p class="text-danger-emphasis mb-1"><u>Redigera</u><i class="fa-regular fa-pen-to-square"></i>
+                        <u>Radera</u><i class="fa-regular fa-trash-can"></i>
+                    </p>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Likea & Kommentera -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4 mb-3">
                 <div class="d-flex flex-row-reverse">
                     <div class="p-2">
-                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i>
+                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
-                    </p>
                     <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                     </div>
-                    </p>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 
-    <!-- Recension -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4">
                 <div class="card-b mb-3">
                     <i class="fa-solid fa-circle-user fa-xl"></i>
                     <p class="fw-bold mb-0">Elin Nyström</p>
-                    <div class="text-warning mb-2">
+                    <div class="text-warning">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -325,28 +307,26 @@ include 'assets/includes/header.php';
                 </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Likea & Kommentera -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4 mb-3">
                 <div class="d-flex flex-row-reverse">
                     <div class="p-2">
-                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i>
+                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
-                    </p>
                     <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                     </div>
-                    </p>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 
     <!-- Recension -->
-    <section>
+    <div>
         <div class="container">
             <div class="row g-4">
                 <div class="card-b mb-3">
@@ -360,34 +340,36 @@ include 'assets/includes/header.php';
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
+
                     <p>Bra bok om man vill få en överblick. Lätt att läsa utan att bli tråkig.</p>
 
                     <p class="text-muted mb-1">9 mars 2026</p>
                     <p class="text-danger-emphasis mb-1"><u>Redigera</u><i class="fa-regular fa-pen-to-square"></i>
                         <u>Radera</u><i class="fa-regular fa-trash-can"></i>
                     </p>
-
-    </section>
-
-    <!-- Likea & Kommentera -->
-    <section>
-        <div class="container">
-            <div class="d-flex flex-row-reverse">
-                <div class="p-2">
-                    <p class="shadow text-white">Kommentera<i class="fa-solid fa-comments"></i>
                 </div>
-                </p>
-                <div class="p-2">
-                    <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i>
-                </div>
-                </p>
             </div>
         </div>
+    </div>
+
+    <!-- Likea & Kommentera -->
+    <div>
+        <div class="container">
+            <div class="row g-4 mb-3">
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2">
+                        <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
+                    </div>
+                    <div class="p-2">
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-    </section>
+    </div>
+    </div>
 
 </main>
+
 <!-- Include footer -->
 <?php include 'assets/includes/footer.php'; ?>

@@ -150,15 +150,11 @@ include 'assets/includes/header.php'; ?>
     <!-- Testimonial section-->
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>
-                <p class="text-white text-left text-sucess">Recensioner</p>
-            </h2>
-
-            <a href="recension.php?source=docs" class="btn btn-sucess">
-                <p class="shadow text-white text-left text-sucess"><i class="fa-solid fa-plus"></i>Skapa recension</p>
+            <h2 class="text-white">Recensioner</h2>
+            <a href="recension.php?source=docs" class="btn btn-success shadow text-white">
+             <i class="fa-solid fa-plus"></i>Skapa recension 
             </a>
         </div>
-
         <!--Show reviews from database-->
         <div class="row g-4">
             <?php
@@ -237,7 +233,7 @@ include 'assets/includes/header.php'; ?>
                         <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
                     <div class="p-2">
-                        <h2 class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></>
+                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
                     </div>
                 </div>
             </div>
