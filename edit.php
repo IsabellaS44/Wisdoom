@@ -22,6 +22,7 @@ require_once 'assets/functions/update.php';
 </head>
 
 <body class="header-page edit-page page-shell">
+    <!-- Include header -->
     <?php include 'assets/includes/header.php'; ?>
     <main>
         <div class="container py-5 mb-5">
@@ -46,6 +47,7 @@ require_once 'assets/functions/update.php';
         </div>
         </form>
     </main>
+    <!-- Include footer -->
     <?php include 'assets/includes/footer.php'; ?>
 </body>
 

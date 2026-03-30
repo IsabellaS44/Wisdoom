@@ -27,6 +27,7 @@ require_once 'assets/functions/insert.php';
 </head>
 
 <body class="header-page page-shell">
+  <!-- Include header -->
   <?php include 'assets/includes/header.php'; ?>
   <main>
     <?php
@@ -106,6 +107,7 @@ require_once 'assets/functions/insert.php';
       <?php endif; ?>
     </section>
   </main>
+  <!-- Include footer -->
   <?php include 'assets/includes/footer.php'; ?>
 </body>
 

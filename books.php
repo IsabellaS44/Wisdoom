@@ -389,7 +389,7 @@ require_once 'assets/functions/select.php';
         </section>
 
     </main>
-
+    <!-- Include footer -->
     <?php include 'assets/includes/footer.php'; ?>
 
 </body>
