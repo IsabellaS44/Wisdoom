@@ -148,12 +148,14 @@ include 'assets/includes/header.php'; ?>
     <div class="section-divider" aria-hidden="true"></div>
 
     <!-- Testimonial section-->
-    <section class="container mt-4">
+    <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2 class="text-white text-left text-success">Recensioner</h2>
+            <h2>
+                <p class="text-white text-left text-sucess">Recensioner</p>
+            </h2>
 
-            <a href="recension.php?source=docs" class="btn btn-success">
-                <span class="shadow text-white text-left text-success"><i class="fa-solid fa-plus"></i>Skapa recension</span>
+            <a href="recension.php?source=docs" class="btn btn-sucess">
+                <p class="shadow text-white text-left text-sucess"><i class="fa-solid fa-plus"></i>Skapa recension</p>
             </a>
         </div>
 
@@ -224,7 +226,7 @@ include 'assets/includes/header.php'; ?>
                 </p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Likea & Kommentera -->
     <div>
@@ -235,7 +237,7 @@ include 'assets/includes/header.php'; ?>
                         <p class="shadow text-white">Kommentera <i class="fa-solid fa-comments"></i></p>
                     </div>
                     <div class="p-2">
-                        <p class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></p>
+                        <h2 class="shadow text-white">Likea<i class="fa-solid fa-thumbs-up"></i></>
                     </div>
                 </div>
             </div>
@@ -327,7 +329,3 @@ include 'assets/includes/header.php'; ?>
 </main>
 
 <?php include 'assets/includes/footer.php'; ?>
-
-</body>
-
-</html>
